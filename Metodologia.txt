@@ -1,0 +1,23 @@
+MODELO DE PD para Behavior Scoring (há histórico)
+
+PROJETO 1
+Quando o objetivo é avaliar o risco de uma operação de crédito a unidade amostral será a operação de crédito - Operação
+
+- Nesse projeto iremos adotar como variável dependente "operação" (transaction) se ela é uma boa (status A), má operação (B), ou indefinido (C e D). Nesse caso não iremos fazer um modelo de crédito específico para medir o risco de crédito de cada cliente (unidade, pessoa específica). A vantagem dessa estratégia é devido ao tamanho amostral da tabela "Transaction"
+
+- Se olharmos para o projeto de operação, cada transação independe um do outro, sendo assim não há como agrupar operações no contexto temporal
+
+
+
+PROJETO 2
+Quando o objetivo é avaliar o risco do cliente, o cliente será a unidade amostral - Cliente (Conta)
+
+- Como uma única conta pode ter contraído uma única dívida ou mais com variações diferentes de classificação de dívida (A-C-D-B) para status, deve-se definir o que caracteriza um bom cliente. 
+Nesse caso podemos avaliar as técnicas para considerar mau pagador:
+    - Único status classe B nos últimos x dias/meses/anos
+    - Dois ou mais status classe B nos últimos x dias/meses/anos
+    - Status classe B na última dívida
+    - Proporção de status classe B sobre outros status maior que x%
+Clientes ou operações indefinidas:
+    - Classe C ou D sem que caiam nas classificações de mau pagador pelo ítem anterior
+
